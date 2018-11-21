@@ -4,8 +4,8 @@
 SELECT
 	co.ymd,
 	co.class_num,
-	case  WHEN  co.class_num =1 
-	THEN  sum(co.class_num) else sum(co.class_num)/co.class_num END AS sum_student,
+	case WHEN co.class_num = 0
+	THEN 0 else sum(co.class_num)/co.class_num END AS sum_student,
 	SUM (co.class_money) AS class_money,
 	SUM (co.keshi_num) AS keshi_num
 FROM
